@@ -1,0 +1,70 @@
+[package]
+name = "github.com/abseil/abseil-cpp"
+version = "20260107.1"
+edition = "2023"
+description = "Abseil Common Libraries (C++)"
+authors = ["Google Inc."]
+license = "Apache-2.0"
+
+[toolchain]
+compiler = "clang"
+cxx_standard = "17"
+
+[build]
+type = "static-lib"
+sources = [
+    "absl/base",
+    "absl/base/internal",
+    "absl/container/internal",
+    "absl/crc",
+    "absl/crc/internal",
+    "absl/debugging",
+    "absl/debugging/internal",
+    "absl/flags",
+    "absl/flags/internal",
+    "absl/hash/internal",
+    "absl/log",
+    "absl/log/internal",
+    "absl/numeric",
+    "absl/profiling",
+    "absl/profiling/internal",
+    "absl/random",
+    "absl/random/internal",
+    "absl/status",
+    "absl/status/internal",
+    "absl/strings",
+    "absl/strings/internal",
+    "absl/strings/internal/str_format",
+    "absl/synchronization",
+    "absl/synchronization/internal",
+    "absl/time",
+    "absl/time/internal/cctz/src",
+]
+include_dirs = [""]
+exclude = [
+    "*_test.cc",
+    "*_testing.cc",
+    "*_benchmark.cc",
+    "*_bench.cc",
+    "*test_util*.cc",
+    "*test_helper*.cc",
+    "exception_safety_testing.cc",
+    "spinlock_test_common.cc",
+    "flag_test_defs.cc",
+    "print_hash_of.cc",
+    "test_actions.cc",
+    "test_matchers.cc",
+    "scoped_mock_log.cc",
+    "test_instance_tracker.cc",
+    "status_matchers.cc",
+    "pow10_helper.cc",
+    "benchmarks.cc",
+    "randen_benchmarks.cc",
+    "gaussian_distribution_gentables.cc",
+    "nanobenchmark.cc",
+    "chi_square.cc",
+    "test_time_zone_names.cc",
+    "time_zone_name_win.cc",
+    "scoped_set_env.cc",
+]
+extra_flags = ["-Wno-deprecated-declarations"]
